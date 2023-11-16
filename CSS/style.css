@@ -1,0 +1,1371 @@
+:root{
+    --fontcolor-lightmode: #212529;
+    --fontcolor-darkmode: #FFFFFF;
+    --fontcolor:#212529;
+    --fontcolor-data:#676773;
+
+    --background-navbar-lightmode: #FFFFFF;
+    --background-navbar-darkmode:#171717 ;
+
+    --background-odd-sections-lightmode:#EEEEEE;
+    --background-odd-sections-darkmode:#252525;
+
+    --backgroundColor-even:#ffffff;
+    --background-even-sections-lightmode:#ffffff;
+    --background-even-sections-darkmode:#202020;
+
+    --background-color-button:#CE1212;
+    --background-color-button--lightmode: #CE1212;
+    --background-color-button--darkmode: #C17E1F;
+
+    --font-color-button:#fff;
+    --contactDetails-color:#616161;
+    --background-color-card:#F5F5F5;
+    --background-card:#F5F5F5;
+    --color-icon:#616161;
+    --font-family:"Amatic SC", sans-serif;
+    --font-default: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+ul li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+::selection{
+    color: var(--fontcolor-darkmode);
+    background-color: #D85454;
+}
+
+::-webkit-scrollbar {
+    width: 0.8rem;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgb(194, 194, 194); 
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #D85454;
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #D85454; 
+  }
+
+/********/
+
+Nav{
+    background-color:var(--background-navbar-lightmode);
+    position: fixed;
+    width: 100%;
+    box-shadow: 0rem 3px 4px 1px #d9d9d9;   
+    z-index: 9999;
+}
+.navContainer{
+    width:90%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-navbar-lightmode);
+}
+.mealify{
+    width: 20%;
+    padding: 1rem;
+    text-align: center;
+    font-size:30px;
+    color: var(--fontcolor);
+    font-weight: 700;
+}
+.mealify span a{
+    color:var(--fontcolor) ;
+}
+.mealify span:last-child{
+    color:var(--background-color-button) ;
+}
+.navlist{
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    align-content: space-around;
+    padding: 1rem;
+}
+.navlist ul{
+    display: flex;
+    color: var(--fontcolor-data);
+}
+.navlist ul li{
+    padding:0.5rem 1.5rem;
+    color: inherit;
+    font-weight: 600;
+    text-align: center;
+    font-size:17px;
+    position: relative;
+}
+.navlist ul li a{
+    color: inherit;
+    text-align: center;
+}
+.navlist ul li a::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 1.6rem;
+    right: 0;
+    height: 2px;
+    background-color: var(--background-color-button--lightmode);
+    z-index: 1;
+    width:2.7rem;
+    transform: scaleX(0);
+    transition: all 1s ease-in-out;
+    transform-origin: left;
+}
+
+.navlist ul li a:hover::after,
+.navlist ul li a:focus::after{
+    transform: scaleX(1.1);
+}
+.navlist ul li a:hover{
+    color: var(--fontcolor);
+}
+
+.navlist ul li a:active::after{
+    color: var(--fontcolor);
+}
+.navlist ul li a:active{
+    color: var(--fontcolor);
+}
+.LightDark{
+    width: 5%;
+    padding: 1rem;
+    font-size: 30px;
+    color: var(--fontcolor);
+}
+ @media screen and (max-width:768px) {
+    .navlist ul{
+        display: flex;
+        flex-direction: row;
+       flex-wrap: wrap;
+        color: var(--fontcolor-data);
+    }
+ }
+
+input[type="checkbox"]{
+    display: none;
+    position: fixed;
+    right: 1rem;
+    top:2rem;
+    z-index: 999999;
+}
+label[for='check']{
+    position: fixed;
+    right: 2rem;
+    top:1.2rem;
+    z-index: 999999;
+}
+label[for='check'] i{
+    font-size: 2rem;
+    z-index: 999999;
+}
+input[type="checkbox"]:checked ~ label{
+    color:var(--font-color-button) ;
+}
+
+
+input[type="checkbox"]:checked ~ main section .oddSection,
+input[type="checkbox"]:checked ~ main section #home .oddSection,
+input[type="checkbox"]:checked ~ .oddSection .homeContainer .homebuttons .play-button,
+input[type="checkbox"]:checked ~ main .homeContainer,
+input[type="checkbox"]:checked ~ main section#home,
+input[type="checkbox"]:checked ~ main section#gallery,
+input[type="checkbox"]:checked ~ main section#contact,
+input[type="checkbox"]:checked ~ main section#contact .small-datails .datail-data,
+input[type="checkbox"]:checked ~ footer,
+input[type="checkbox"]:checked ~ nav{
+    --background-odd-sections-lightmode:#252525;
+    --background-color-card:#646464;
+    --color-icon:#616161;
+    --fontcolor:#FFFFFF;
+    --fontcolor-lightmode:#fff;
+    --fontcolor-data:#d1d1d1;
+    --background-navbar-lightmode: #171717;
+    --background-odd-sections-lightmode:#333333;
+    --backgroundColor-even:#202020;
+    --background-even-sections-lightmode:#202020;  
+    --background-color-button: #C17E1F;
+    --background-color-button--lightmode:  #C17E1F;
+    --font-color-button:var(--fontcolor-data);
+    --contactDetails-color:#fff;
+}
+input[type="checkbox"]:checked ~ main section .evenSection,
+input[type="checkbox"]:checked ~ main section#chefs,
+input[type="checkbox"]:checked ~ main section#chefs .chefsCard,
+input[type="checkbox"]:checked ~ main section#chefs .chefsCard .chefHeaders{
+    --background-odd-sections-lightmode:#252525;
+    --background-color-card:#646464;
+    --color-icon:#616161;
+    --fontcolor:#FFFFFF;
+    --fontcolor-lightmode:#fff;
+    --fontcolor-data:#676773;
+    --background-navbar-lightmode: #171717;
+    --background-odd-sections-lightmode:#333333;
+    --backgroundColor-even:#262626;
+    --background-even-sections-lightmode:#202020; 
+    --background-card: #333333;
+    --background-color-button: #C17E1F;
+    --background-color-button--lightmode:  #C17E1F;
+    --contactDetails-color:#fff;
+}
+input[type="checkbox"]:checked ~ main{
+background-color: var(--background-odd-sections-darkmode);
+}
+input[type="checkbox"]:checked ~ main section{
+    background-color: var(--background-odd-sections-lightmode);
+}
+/*** End of Navbar****/
+
+/**********Main *********/
+/*****Section Home*****/
+main{
+    position: relative;
+    top:4.5rem;
+    bottom: 0;
+}
+#home{
+    background-color: var(--background-odd-sections-lightmode);
+    scroll-padding: 2rem;
+    width: 100%;
+}
+.oddSection{
+    padding: 6rem 3rem;
+    width:95%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    background-color: var(--background-odd-sections-lightmode);
+}
+.oddSection .homeContainer{
+    width:100%;
+    font-size: 2.5rem;
+}
+.oddSection .homeContainer h2{
+    font-family: var(--font-family);
+    font-weight: 100;
+    color: var(--fontcolor);   
+}
+.oddSection .homeContainer p{
+    font-family: var(--font-default);
+    font-weight: 100;
+    font-size: 1.2rem;
+    color: var(--fontcolor-data);    
+}
+.oddSection .homeContainer .homebuttons{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content:start;
+}
+.oddSection .homeContainer .homebuttons a.button{
+    margin-top: 1.5rem ;
+    width: 20%;
+    padding: 0.8rem 1.2rem;
+    font-family: var(--font-default);
+    font-weight: 100;
+    font-size: 1.1rem;
+    color: var(--fontcolor-darkmode);
+    background-color: var(--background-color-button);
+    border: none;
+    border-top-right-radius:2rem;
+    border-bottom-right-radius:2rem;
+    border-bottom-left-radius: 2rem;
+}
+.oddSection .homeContainer .homebuttons .play-button{
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    margin-top: 22px;
+    color: var(--fontcolor-data);
+}
+.oddSection .homeContainer .homebuttons .play-button .icon{
+    width: 45px;
+    height: 45px;
+    /* background-color: var(--background-color-button); */
+    background-image: linear-gradient(to right, var(--background-color-button) 0% 50% , transparent 50% 0%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-inline-start: 10px;
+    margin-inline-end: 5px;
+    border-radius: 50%;
+    font-size: 2rem;
+    color: initial;
+    position: relative;
+    color: var(--fontcolor-data);
+}
+.oddSection .homeContainer .homebuttons .play-button .icon::after{
+content: '';
+position: absolute;
+background-color: #fff;
+width: 35px;
+height: 35px;
+border-radius: 50%;
+}
+.play-button .icon i{
+    
+    z-index: 10;
+}
+/* .oddSection .homeContainer .homebuttons div{
+    position: relative;
+    top: 2rem;
+    bottom: 0;
+    width: 60%;
+    margin-left: 2rem;
+    font-size: 2rem;
+    color: var(--fontcolor-darkmode);   
+}
+
+.oddSection .homeContainer .homebuttons div .icon{
+    width:10%;
+    position: relative;
+    top: 0;
+    bottom: 0;
+    z-index: 0;
+}
+.oddSection .homeContainer .homebuttons div div:not(.icon){
+    width:90%;
+    position: relative;
+    left:2.5rem;
+    top: -2.45rem;
+    z-index: 0;
+    color: var(--fontcolor);
+}
+.oddSection .homeContainer .homebuttons div div:not(.icon) a{
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: inherit;
+    font-family: var(--font-default);
+}
+.homebuttons:hover .homebuttons div div.content a{
+    color: var(--background-color-button);
+    transition: all 400ms ease-in-out;
+} */
+.homebuttons:hover .homebuttons:hover{
+    cursor: pointer;
+}
+/* .oddSection .homeContainer .homebuttons div div.icon i{
+    position: relative;
+    top:0;
+    bottom: 0;
+    left: 0.3rem;
+    z-index: 3;
+    color: var(--fontcolor-data);
+} */
+/* .oddSection .homeContainer .homebuttons div div.icon{
+    background-color: transparent; 
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border: 0.6rem solid var(--background-color-button--lightmode);
+    border-right: 0;
+    border-top:0;
+    border-bottom:0;
+    z-index: 1;  
+    margin-inline-start:0.6rem;
+    transition: all 400ms ease-in-out;
+} */
+/* .oddSection .homeContainer .homebuttons div div.content a:hover,
+.oddSection .homeContainer .homebuttons div div.icon i:hover{
+    color: var(--background-color-button--lightmode);
+} */
+.picDish{
+    width: 50%;
+    text-align: center;
+    position: relative;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 0;
+
+}
+/* .picDish */
+ img.dish{
+    width: 40%;
+    border-radius: 100%;
+    filter: drop-shadow(0 1rem 1rem rgb(78, 78, 78));
+    position:relative;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 5;
+    transform: scale(1,1);
+    transition: all 1s ease;
+}
+img.dish:hover{
+    animation:moving 400ms ease-in 0s infinite reverse ;
+}
+
+@keyframes moving{
+    0%   { left:0rem;top: -1rem;}
+    50%  { left:0.1rem;top: 1rem;}
+    100% {left:0rem;top: -1rem; }
+}
+
+@media screen and (max-width: 992px){
+    :root{
+        font-size: 17px;
+    }
+    #home .oddSection{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+    }
+    .oddSection .homeContainer .homebuttons div div:not(.icon){
+        width: 100%;
+    }
+    .homeContainer{
+        width: 100%;
+    }
+    img.dish{
+        margin-top: 0.5rem;
+        width: 80%;
+    }
+    /* .picDish{
+        width: 100%;
+    } */
+}
+/******End of section home*********/
+
+/***************Section chiefs ********/
+#chefs{
+    background-color: var(--backgroundColor-even);
+    scroll-padding: 2rem;
+    padding: 3rem 0;
+}
+.evenSection{
+    background-color: var(--backgroundColor-even);
+    width: 100%;
+    margin: auto;
+    padding: 2rem 0;
+}
+.chefsContainer{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: relative;
+    background-color: var(--backgroundColor-even);
+}
+.chefHeaders{
+    width: 100%;
+    text-align: center;
+    background-color: var(--backgroundColor-even);
+    position: relative;
+    top: 2rem;
+    margin-bottom: 2rem;
+}
+ .chefHeaders h4{
+    font-size: 1rem;
+    font-family: var(--font-default);
+    background-color: var(--backgroundColor-even);
+    color: var(--fontcolor);
+}
+ .chefHeaders h2{
+    font-size: 3rem;
+    font-family: var(--font-family);
+    background-color: var(--backgroundColor-even);
+    color: var(--fontcolor);
+}
+.chefHeaders h2 span{
+    font-size: 3rem;
+    font-family: var(--font-family);
+    color: var(--background-color-button);
+    background-color: var(--backgroundColor-even);
+}
+.chefsCards{
+    width: 100%;
+    padding: 1rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--backgroundColor-even);
+    z-index: 1;
+}
+.chefCard{
+    width:30%;
+    background-color: var(--background-card);
+    box-shadow: 0.1rem 0.1rem 0.5rem 0.1rem var(--fontcolor-data);
+    border-radius: 0.3rem;
+    transition: all 1s ease-in-out;
+    overflow: hidden;
+    position: relative; 
+    z-index: 1;
+}
+.chefCard:hover{
+    transform: scale(1.03,1.03);
+}
+.chiefCardInfo{
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--background-card);
+    color: var(--fontcolor-data);
+    font-family: var(--font-default);
+}
+.chiefCardInfo h3,.chiefCardInfo p{
+    background-color: var(--background-card);
+    padding: 0.2rem;
+}
+.chiefCardInfo p:last-child{
+    font-style: italic;
+}
+.chefCard .chiefCardInfo h3{
+    font-size: 1.5rem;
+    color: var(--fontcolor);
+}
+.chiefCardPhoto{
+    background-color: var(--background-card);
+}
+.socialIcons{
+position: absolute;
+top:3rem;
+left: 26rem;
+right: 0;
+bottom: 0;
+z-index: 9999;
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+align-content: space-around;
+height: fit-content;
+width: fit-content;
+background-color: rgba(230, 224, 217,0.7);
+border-radius: 0.5rem;
+
+transition: left 1s ease-in 3s;
+}
+.socialIcons > a{
+    padding: 0.9rem;
+    color: var( --color-icon);
+    z-index: 199;
+}
+ a i:hover {
+    color: var(--background-color-button--lightmode);
+}
+.socialIcons{
+    transition: left 1s ease-in-out;
+}
+.chefCard:hover .socialIcons{
+    left: 21rem;
+}
+.chiefCardPhoto{
+
+    clip-path: polygon(100% 0%, 0% 0% , 0.00% 85.99%, 0.10% 85.97%, 0.20% 85.95%, 0.30% 85.93%, 0.40% 85.92%, 0.50% 85.90%, 0.60% 85.88%, 0.70% 85.87%, 0.80% 85.85%, 0.90% 85.83%, 1.00% 85.82%, 1.10% 85.80%, 1.20% 85.79%, 1.30% 85.77%, 1.40% 85.76%, 1.50% 85.75%, 1.60% 85.73%, 1.70% 85.72%, 1.80% 85.71%, 1.90% 85.69%, 2.00% 85.68%, 2.10% 85.67%, 2.20% 85.66%, 2.30% 85.65%, 2.40% 85.64%, 2.50% 85.63%, 2.60% 85.62%, 2.70% 85.61%, 2.80% 85.60%, 2.90% 85.59%, 3.00% 85.58%, 3.10% 85.57%, 3.20% 85.57%, 3.30% 85.56%, 3.40% 85.55%, 3.50% 85.54%, 3.60% 85.54%, 3.70% 85.53%, 3.80% 85.53%, 3.90% 85.52%, 4.00% 85.52%, 4.10% 85.51%, 4.20% 85.51%, 4.30% 85.50%, 4.40% 85.50%, 4.50% 85.50%, 4.60% 85.49%, 4.70% 85.49%, 4.80% 85.49%, 4.90% 85.49%, 5.00% 85.49%, 5.10% 85.48%, 5.20% 85.48%, 5.30% 85.48%, 5.40% 85.48%, 5.50% 85.48%, 5.60% 85.49%, 5.70% 85.49%, 5.80% 85.49%, 5.90% 85.49%, 6.00% 85.49%, 6.10% 85.49%, 6.20% 85.50%, 6.30% 85.50%, 6.40% 85.50%, 6.50% 85.51%, 6.60% 85.51%, 6.70% 85.52%, 6.80% 85.52%, 6.90% 85.53%, 7.00% 85.53%, 7.10% 85.54%, 7.20% 85.55%, 7.30% 85.55%, 7.40% 85.56%, 7.50% 85.57%, 7.60% 85.58%, 7.70% 85.58%, 7.80% 85.59%, 7.90% 85.60%, 8.00% 85.61%, 8.10% 85.62%, 8.20% 85.63%, 8.30% 85.64%, 8.40% 85.65%, 8.50% 85.66%, 8.60% 85.67%, 8.70% 85.68%, 8.80% 85.70%, 8.90% 85.71%, 9.00% 85.72%, 9.10% 85.74%, 9.20% 85.75%, 9.30% 85.76%, 9.40% 85.78%, 9.50% 85.79%, 9.60% 85.81%, 9.70% 85.82%, 9.80% 85.84%, 9.90% 85.85%, 10.00% 85.87%, 10.10% 85.88%, 10.20% 85.90%, 10.30% 85.92%, 10.40% 85.94%, 10.50% 85.95%, 10.60% 85.97%, 10.70% 85.99%, 10.80% 86.01%, 10.90% 86.03%, 11.00% 86.05%, 11.10% 86.07%, 11.20% 86.09%, 11.30% 86.11%, 11.40% 86.13%, 11.50% 86.15%, 11.60% 86.17%, 11.70% 86.19%, 11.80% 86.21%, 11.90% 86.24%, 12.00% 86.26%, 12.10% 86.28%, 12.20% 86.31%, 12.30% 86.33%, 12.40% 86.35%, 12.50% 86.38%, 12.60% 86.40%, 12.70% 86.43%, 12.80% 86.45%, 12.90% 86.48%, 13.00% 86.50%, 13.10% 86.53%, 13.20% 86.55%, 13.30% 86.58%, 13.40% 86.61%, 13.50% 86.63%, 13.60% 86.66%, 13.70% 86.69%, 13.80% 86.72%, 13.90% 86.74%, 14.00% 86.77%, 14.10% 86.80%, 14.20% 86.83%, 14.30% 86.86%, 14.40% 86.89%, 14.50% 86.92%, 14.60% 86.95%, 14.70% 86.98%, 14.80% 87.01%, 14.90% 87.04%, 15.00% 87.07%, 15.10% 87.10%, 15.20% 87.13%, 15.30% 87.17%, 15.40% 87.20%, 15.50% 87.23%, 15.60% 87.26%, 15.70% 87.30%, 15.80% 87.33%, 15.90% 87.36%, 16.00% 87.40%, 16.10% 87.43%, 16.20% 87.46%, 16.30% 87.50%, 16.40% 87.53%, 16.50% 87.57%, 16.60% 87.60%, 16.70% 87.64%, 16.80% 87.67%, 16.90% 87.71%, 17.00% 87.74%, 17.10% 87.78%, 17.20% 87.81%, 17.30% 87.85%, 17.40% 87.89%, 17.50% 87.92%, 17.60% 87.96%, 17.70% 88.00%, 17.80% 88.04%, 17.90% 88.07%, 18.00% 88.11%, 18.10% 88.15%, 18.20% 88.19%, 18.30% 88.22%, 18.40% 88.26%, 18.50% 88.30%, 18.60% 88.34%, 18.70% 88.38%, 18.80% 88.42%, 18.90% 88.46%, 19.00% 88.50%, 19.10% 88.54%, 19.20% 88.58%, 19.30% 88.62%, 19.40% 88.66%, 19.50% 88.70%, 19.60% 88.74%, 19.70% 88.78%, 19.80% 88.82%, 19.90% 88.86%, 20.00% 88.90%, 20.10% 88.94%, 20.20% 88.98%, 20.30% 89.02%, 20.40% 89.06%, 20.50% 89.10%, 20.60% 89.15%, 20.70% 89.19%, 20.80% 89.23%, 20.90% 89.27%, 21.00% 89.31%, 21.10% 89.36%, 21.20% 89.40%, 21.30% 89.44%, 21.40% 89.48%, 21.50% 89.52%, 21.60% 89.57%, 21.70% 89.61%, 21.80% 89.65%, 21.90% 89.70%, 22.00% 89.74%, 22.10% 89.78%, 22.20% 89.82%, 22.30% 89.87%, 22.40% 89.91%, 22.50% 89.95%, 22.60% 90.00%, 22.70% 90.04%, 22.80% 90.08%, 22.90% 90.13%, 23.00% 90.17%, 23.10% 90.22%, 23.20% 90.26%, 23.30% 90.30%, 23.40% 90.35%, 23.50% 90.39%, 23.60% 90.43%, 23.70% 90.48%, 23.80% 90.52%, 23.90% 90.56%, 24.00% 90.61%, 24.10% 90.65%, 24.20% 90.70%, 24.30% 90.74%, 24.40% 90.78%, 24.50% 90.83%, 24.60% 90.87%, 24.70% 90.92%, 24.80% 90.96%, 24.90% 91.00%, 25.00% 91.05%, 25.10% 91.09%, 25.20% 91.14%, 25.30% 91.18%, 25.40% 91.22%, 25.50% 91.27%, 25.60% 91.31%, 25.70% 91.35%, 25.80% 91.40%, 25.90% 91.44%, 26.00% 91.49%, 26.10% 91.53%, 26.20% 91.57%, 26.30% 91.62%, 26.40% 91.66%, 26.50% 91.70%, 26.60% 91.75%, 26.70% 91.79%, 26.80% 91.83%, 26.90% 91.88%, 27.00% 91.92%, 27.10% 91.96%, 27.20% 92.01%, 27.30% 92.05%, 27.40% 92.09%, 27.50% 92.13%, 27.60% 92.18%, 27.70% 92.22%, 27.80% 92.26%, 27.90% 92.30%, 28.00% 92.35%, 28.10% 92.39%, 28.20% 92.43%, 28.30% 92.47%, 28.40% 92.51%, 28.50% 92.56%, 28.60% 92.60%, 28.70% 92.64%, 28.80% 92.68%, 28.90% 92.72%, 29.00% 92.76%, 29.10% 92.80%, 29.20% 92.84%, 29.30% 92.89%, 29.40% 92.93%, 29.50% 92.97%, 29.60% 93.01%, 29.70% 93.05%, 29.80% 93.09%, 29.90% 93.13%, 30.00% 93.17%, 30.10% 93.21%, 30.20% 93.25%, 30.30% 93.28%, 30.40% 93.32%, 30.50% 93.36%, 30.60% 93.40%, 30.70% 93.44%, 30.80% 93.48%, 30.90% 93.52%, 31.00% 93.55%, 31.10% 93.59%, 31.20% 93.63%, 31.30% 93.67%, 31.40% 93.71%, 31.50% 93.74%, 31.60% 93.78%, 31.70% 93.82%, 31.80% 93.85%, 31.90% 93.89%, 32.00% 93.93%, 32.10% 93.96%, 32.20% 94.00%, 32.30% 94.03%, 32.40% 94.07%, 32.50% 94.10%, 32.60% 94.14%, 32.70% 94.17%, 32.80% 94.21%, 32.90% 94.24%, 33.00% 94.28%, 33.10% 94.31%, 33.20% 94.34%, 33.30% 94.38%, 33.40% 94.41%, 33.50% 94.44%, 33.60% 94.47%, 33.70% 94.51%, 33.80% 94.54%, 33.90% 94.57%, 34.00% 94.60%, 34.10% 94.63%, 34.20% 94.67%, 34.30% 94.70%, 34.40% 94.73%, 34.50% 94.76%, 34.60% 94.79%, 34.70% 94.82%, 34.80% 94.85%, 34.90% 94.88%, 35.00% 94.91%, 35.10% 94.93%, 35.20% 94.96%, 35.30% 94.99%, 35.40% 95.02%, 35.50% 95.05%, 35.60% 95.07%, 35.70% 95.10%, 35.80% 95.13%, 35.90% 95.15%, 36.00% 95.18%, 36.10% 95.21%, 36.20% 95.23%, 36.30% 95.26%, 36.40% 95.28%, 36.50% 95.31%, 36.60% 95.33%, 36.70% 95.36%, 36.80% 95.38%, 36.90% 95.40%, 37.00% 95.43%, 37.10% 95.45%, 37.20% 95.47%, 37.30% 95.50%, 37.40% 95.52%, 37.50% 95.54%, 37.60% 95.56%, 37.70% 95.58%, 37.80% 95.60%, 37.90% 95.62%, 38.00% 95.64%, 38.10% 95.66%, 38.20% 95.68%, 38.30% 95.70%, 38.40% 95.72%, 38.50% 95.74%, 38.60% 95.76%, 38.70% 95.78%, 38.80% 95.79%, 38.90% 95.81%, 39.00% 95.83%, 39.10% 95.84%, 39.20% 95.86%, 39.30% 95.88%, 39.40% 95.89%, 39.50% 95.91%, 39.60% 95.92%, 39.70% 95.94%, 39.80% 95.95%, 39.90% 95.97%, 40.00% 95.98%, 40.10% 95.99%, 40.20% 96.01%, 40.30% 96.02%, 40.40% 96.03%, 40.50% 96.04%, 40.60% 96.05%, 40.70% 96.06%, 40.80% 96.08%, 40.90% 96.09%, 41.00% 96.10%, 41.10% 96.11%, 41.20% 96.12%, 41.30% 96.12%, 41.40% 96.13%, 41.50% 96.14%, 41.60% 96.15%, 41.70% 96.16%, 41.80% 96.16%, 41.90% 96.17%, 42.00% 96.18%, 42.10% 96.18%, 42.20% 96.19%, 42.30% 96.20%, 42.40% 96.20%, 42.50% 96.21%, 42.60% 96.21%, 42.70% 96.21%, 42.80% 96.22%, 42.90% 96.22%, 43.00% 96.22%, 43.10% 96.23%, 43.20% 96.23%, 43.30% 96.23%, 43.40% 96.23%, 43.50% 96.23%, 43.60% 96.24%, 43.70% 96.24%, 43.80% 96.24%, 43.90% 96.24%, 44.00% 96.24%, 44.10% 96.23%, 44.20% 96.23%, 44.30% 96.23%, 44.40% 96.23%, 44.50% 96.23%, 44.60% 96.23%, 44.70% 96.22%, 44.80% 96.22%, 44.90% 96.22%, 45.00% 96.21%, 45.10% 96.21%, 45.20% 96.20%, 45.30% 96.20%, 45.40% 96.19%, 45.50% 96.19%, 45.60% 96.18%, 45.70% 96.17%, 45.80% 96.17%, 45.90% 96.16%, 46.00% 96.15%, 46.10% 96.14%, 46.20% 96.13%, 46.30% 96.13%, 46.40% 96.12%, 46.50% 96.11%, 46.60% 96.10%, 46.70% 96.09%, 46.80% 96.08%, 46.90% 96.07%, 47.00% 96.05%, 47.10% 96.04%, 47.20% 96.03%, 47.30% 96.02%, 47.40% 96.01%, 47.50% 95.99%, 47.60% 95.98%, 47.70% 95.97%, 47.80% 95.95%, 47.90% 95.94%, 48.00% 95.92%, 48.10% 95.91%, 48.20% 95.89%, 48.30% 95.88%, 48.40% 95.86%, 48.50% 95.85%, 48.60% 95.83%, 48.70% 95.81%, 48.80% 95.79%, 48.90% 95.78%, 49.00% 95.76%, 49.10% 95.74%, 49.20% 95.72%, 49.30% 95.70%, 49.40% 95.68%, 49.50% 95.66%, 49.60% 95.65%, 49.70% 95.62%, 49.80% 95.60%, 49.90% 95.58%, 50.00% 95.56%, 50.10% 95.54%, 50.20% 95.52%, 50.30% 95.50%, 50.40% 95.47%, 50.50% 95.45%, 50.60% 95.43%, 50.70% 95.41%, 50.80% 95.38%, 50.90% 95.36%, 51.00% 95.33%, 51.10% 95.31%, 51.20% 95.28%, 51.30% 95.26%, 51.40% 95.23%, 51.50% 95.21%, 51.60% 95.18%, 51.70% 95.16%, 51.80% 95.13%, 51.90% 95.10%, 52.00% 95.08%, 52.10% 95.05%, 52.20% 95.02%, 52.30% 94.99%, 52.40% 94.96%, 52.50% 94.94%, 52.60% 94.91%, 52.70% 94.88%, 52.80% 94.85%, 52.90% 94.82%, 53.00% 94.79%, 53.10% 94.76%, 53.20% 94.73%, 53.30% 94.70%, 53.40% 94.67%, 53.50% 94.64%, 53.60% 94.61%, 53.70% 94.57%, 53.80% 94.54%, 53.90% 94.51%, 54.00% 94.48%, 54.10% 94.44%, 54.20% 94.41%, 54.30% 94.38%, 54.40% 94.35%, 54.50% 94.31%, 54.60% 94.28%, 54.70% 94.24%, 54.80% 94.21%, 54.90% 94.18%, 55.00% 94.14%, 55.10% 94.11%, 55.20% 94.07%, 55.30% 94.04%, 55.40% 94.00%, 55.50% 93.96%, 55.60% 93.93%, 55.70% 93.89%, 55.80% 93.86%, 55.90% 93.82%, 56.00% 93.78%, 56.10% 93.75%, 56.20% 93.71%, 56.30% 93.67%, 56.40% 93.63%, 56.50% 93.60%, 56.60% 93.56%, 56.70% 93.52%, 56.80% 93.48%, 56.90% 93.44%, 57.00% 93.40%, 57.10% 93.37%, 57.20% 93.33%, 57.30% 93.29%, 57.40% 93.25%, 57.50% 93.21%, 57.60% 93.17%, 57.70% 93.13%, 57.80% 93.09%, 57.90% 93.05%, 58.00% 93.01%, 58.10% 92.97%, 58.20% 92.93%, 58.30% 92.89%, 58.40% 92.85%, 58.50% 92.81%, 58.60% 92.77%, 58.70% 92.72%, 58.80% 92.68%, 58.90% 92.64%, 59.00% 92.60%, 59.10% 92.56%, 59.20% 92.52%, 59.30% 92.47%, 59.40% 92.43%, 59.50% 92.39%, 59.60% 92.35%, 59.70% 92.31%, 59.80% 92.26%, 59.90% 92.22%, 60.00% 92.18%, 60.10% 92.14%, 60.20% 92.09%, 60.30% 92.05%, 60.40% 92.01%, 60.50% 91.97%, 60.60% 91.92%, 60.70% 91.88%, 60.80% 91.84%, 60.90% 91.79%, 61.00% 91.75%, 61.10% 91.71%, 61.20% 91.66%, 61.30% 91.62%, 61.40% 91.58%, 61.50% 91.53%, 61.60% 91.49%, 61.70% 91.44%, 61.80% 91.40%, 61.90% 91.36%, 62.00% 91.31%, 62.10% 91.27%, 62.20% 91.23%, 62.30% 91.18%, 62.40% 91.14%, 62.50% 91.09%, 62.60% 91.05%, 62.70% 91.01%, 62.80% 90.96%, 62.90% 90.92%, 63.00% 90.88%, 63.10% 90.83%, 63.20% 90.79%, 63.30% 90.74%, 63.40% 90.70%, 63.50% 90.66%, 63.60% 90.61%, 63.70% 90.57%, 63.80% 90.52%, 63.90% 90.48%, 64.00% 90.44%, 64.10% 90.39%, 64.20% 90.35%, 64.30% 90.31%, 64.40% 90.26%, 64.50% 90.22%, 64.60% 90.17%, 64.70% 90.13%, 64.80% 90.09%, 64.90% 90.04%, 65.00% 90.00%, 65.10% 89.96%, 65.20% 89.91%, 65.30% 89.87%, 65.40% 89.83%, 65.50% 89.78%, 65.60% 89.74%, 65.70% 89.70%, 65.80% 89.66%, 65.90% 89.61%, 66.00% 89.57%, 66.10% 89.53%, 66.20% 89.49%, 66.30% 89.44%, 66.40% 89.40%, 66.50% 89.36%, 66.60% 89.32%, 66.70% 89.27%, 66.80% 89.23%, 66.90% 89.19%, 67.00% 89.15%, 67.10% 89.11%, 67.20% 89.07%, 67.30% 89.02%, 67.40% 88.98%, 67.50% 88.94%, 67.60% 88.90%, 67.70% 88.86%, 67.80% 88.82%, 67.90% 88.78%, 68.00% 88.74%, 68.10% 88.70%, 68.20% 88.66%, 68.30% 88.62%, 68.40% 88.58%, 68.50% 88.54%, 68.60% 88.50%, 68.70% 88.46%, 68.80% 88.42%, 68.90% 88.38%, 69.00% 88.34%, 69.10% 88.30%, 69.20% 88.27%, 69.30% 88.23%, 69.40% 88.19%, 69.50% 88.15%, 69.60% 88.11%, 69.70% 88.08%, 69.80% 88.04%, 69.90% 88.00%, 70.00% 87.96%, 70.10% 87.93%, 70.20% 87.89%, 70.30% 87.85%, 70.40% 87.82%, 70.50% 87.78%, 70.60% 87.75%, 70.70% 87.71%, 70.80% 87.67%, 70.90% 87.64%, 71.00% 87.60%, 71.10% 87.57%, 71.20% 87.53%, 71.30% 87.50%, 71.40% 87.47%, 71.50% 87.43%, 71.60% 87.40%, 71.70% 87.36%, 71.80% 87.33%, 71.90% 87.30%, 72.00% 87.27%, 72.10% 87.23%, 72.20% 87.20%, 72.30% 87.17%, 72.40% 87.14%, 72.50% 87.11%, 72.60% 87.07%, 72.70% 87.04%, 72.80% 87.01%, 72.90% 86.98%, 73.00% 86.95%, 73.10% 86.92%, 73.20% 86.89%, 73.30% 86.86%, 73.40% 86.83%, 73.50% 86.80%, 73.60% 86.78%, 73.70% 86.75%, 73.80% 86.72%, 73.90% 86.69%, 74.00% 86.66%, 74.10% 86.64%, 74.20% 86.61%, 74.30% 86.58%, 74.40% 86.56%, 74.50% 86.53%, 74.60% 86.50%, 74.70% 86.48%, 74.80% 86.45%, 74.90% 86.43%, 75.00% 86.40%, 75.10% 86.38%, 75.20% 86.35%, 75.30% 86.33%, 75.40% 86.31%, 75.50% 86.28%, 75.60% 86.26%, 75.70% 86.24%, 75.80% 86.22%, 75.90% 86.19%, 76.00% 86.17%, 76.10% 86.15%, 76.20% 86.13%, 76.30% 86.11%, 76.40% 86.09%, 76.50% 86.07%, 76.60% 86.05%, 76.70% 86.03%, 76.80% 86.01%, 76.90% 85.99%, 77.00% 85.97%, 77.10% 85.96%, 77.20% 85.94%, 77.30% 85.92%, 77.40% 85.90%, 77.50% 85.89%, 77.60% 85.87%, 77.70% 85.85%, 77.80% 85.84%, 77.90% 85.82%, 78.00% 85.81%, 78.10% 85.79%, 78.20% 85.78%, 78.30% 85.76%, 78.40% 85.75%, 78.50% 85.74%, 78.60% 85.72%, 78.70% 85.71%, 78.80% 85.70%, 78.90% 85.69%, 79.00% 85.67%, 79.10% 85.66%, 79.20% 85.65%, 79.30% 85.64%, 79.40% 85.63%, 79.50% 85.62%, 79.60% 85.61%, 79.70% 85.60%, 79.80% 85.59%, 79.90% 85.58%, 80.00% 85.58%, 80.10% 85.57%, 80.20% 85.56%, 80.30% 85.55%, 80.40% 85.55%, 80.50% 85.54%, 80.60% 85.53%, 80.70% 85.53%, 80.80% 85.52%, 80.90% 85.52%, 81.00% 85.51%, 81.10% 85.51%, 81.20% 85.50%, 81.30% 85.50%, 81.40% 85.50%, 81.50% 85.49%, 81.60% 85.49%, 81.70% 85.49%, 81.80% 85.49%, 81.90% 85.49%, 82.00% 85.49%, 82.10% 85.48%, 82.20% 85.48%, 82.30% 85.48%, 82.40% 85.48%, 82.50% 85.48%, 82.60% 85.49%, 82.70% 85.49%, 82.80% 85.49%, 82.90% 85.49%, 83.00% 85.49%, 83.10% 85.50%, 83.20% 85.50%, 83.30% 85.50%, 83.40% 85.51%, 83.50% 85.51%, 83.60% 85.52%, 83.70% 85.52%, 83.80% 85.53%, 83.90% 85.53%, 84.00% 85.54%, 84.10% 85.54%, 84.20% 85.55%, 84.30% 85.56%, 84.40% 85.57%, 84.50% 85.57%, 84.60% 85.58%, 84.70% 85.59%, 84.80% 85.60%, 84.90% 85.61%, 85.00% 85.62%, 85.10% 85.63%, 85.20% 85.64%, 85.30% 85.65%, 85.40% 85.66%, 85.50% 85.67%, 85.60% 85.68%, 85.70% 85.69%, 85.80% 85.71%, 85.90% 85.72%, 86.00% 85.73%, 86.10% 85.75%, 86.20% 85.76%, 86.30% 85.77%, 86.40% 85.79%, 86.50% 85.80%, 86.60% 85.82%, 86.70% 85.83%, 86.80% 85.85%, 86.90% 85.86%, 87.00% 85.88%, 87.10% 85.90%, 87.20% 85.91%, 87.30% 85.93%, 87.40% 85.95%, 87.50% 85.97%, 87.60% 85.99%, 87.70% 86.01%, 87.80% 86.02%, 87.90% 86.04%, 88.00% 86.06%, 88.10% 86.08%, 88.20% 86.10%, 88.30% 86.12%, 88.40% 86.14%, 88.50% 86.17%, 88.60% 86.19%, 88.70% 86.21%, 88.80% 86.23%, 88.90% 86.25%, 89.00% 86.28%, 89.10% 86.30%, 89.20% 86.32%, 89.30% 86.35%, 89.40% 86.37%, 89.50% 86.40%, 89.60% 86.42%, 89.70% 86.45%, 89.80% 86.47%, 89.90% 86.50%, 90.00% 86.52%, 90.10% 86.55%, 90.20% 86.57%, 90.30% 86.60%, 90.40% 86.63%, 90.50% 86.65%, 90.60% 86.68%, 90.70% 86.71%, 90.80% 86.74%, 90.90% 86.77%, 91.00% 86.80%, 91.10% 86.82%, 91.20% 86.85%, 91.30% 86.88%, 91.40% 86.91%, 91.50% 86.94%, 91.60% 86.97%, 91.70% 87.00%, 91.80% 87.03%, 91.90% 87.06%, 92.00% 87.10%, 92.10% 87.13%, 92.20% 87.16%, 92.30% 87.19%, 92.40% 87.22%, 92.50% 87.26%, 92.60% 87.29%, 92.70% 87.32%, 92.80% 87.35%, 92.90% 87.39%, 93.00% 87.42%, 93.10% 87.46%, 93.20% 87.49%, 93.30% 87.52%, 93.40% 87.56%, 93.50% 87.59%, 93.60% 87.63%, 93.70% 87.66%, 93.80% 87.70%, 93.90% 87.73%, 94.00% 87.77%, 94.10% 87.81%, 94.20% 87.84%, 94.30% 87.88%, 94.40% 87.92%, 94.50% 87.95%, 94.60% 87.99%, 94.70% 88.03%, 94.80% 88.06%, 94.90% 88.10%, 95.00% 88.14%, 95.10% 88.18%, 95.20% 88.22%, 95.30% 88.25%, 95.40% 88.29%, 95.50% 88.33%, 95.60% 88.37%, 95.70% 88.41%, 95.80% 88.45%, 95.90% 88.49%, 96.00% 88.53%, 96.10% 88.57%, 96.20% 88.61%, 96.30% 88.65%, 96.40% 88.69%, 96.50% 88.73%, 96.60% 88.77%, 96.70% 88.81%, 96.80% 88.85%, 96.90% 88.89%, 97.00% 88.93%, 97.10% 88.97%, 97.20% 89.01%, 97.30% 89.05%, 97.40% 89.09%, 97.50% 89.14%, 97.60% 89.18%, 97.70% 89.22%, 97.80% 89.26%, 97.90% 89.30%, 98.00% 89.35%, 98.10% 89.39%, 98.20% 89.43%, 98.30% 89.47%, 98.40% 89.52%, 98.50% 89.56%, 98.60% 89.60%, 98.70% 89.64%, 98.80% 89.69%, 98.90% 89.73%, 99.00% 89.77%, 99.10% 89.81%, 99.20% 89.86%, 99.30% 89.90%, 99.40% 89.94%, 99.50% 89.99%, 99.60% 90.03%, 99.70% 90.07%, 99.80% 90.12%, 99.90% 90.16%, 100.00% 90.21%);
+}
+.chiefCardPhoto img{
+    width:100%;
+}
+
+
+@media screen and (max-width: 576px) {
+    .chefsCards{
+        width: 100%;
+        padding: 1rem 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .chefCard{
+        margin-block: 1rem;
+        width: 100%;
+    }
+    .socialIcons{
+        left: 28rem;
+    }
+    .chefCard:hover .socialIcons{
+        left: 22rem;
+    }
+}
+@media screen and (min-width: 577px) and (max-width:680px) {
+    .chefsCards{
+        width: 100%;
+        padding: 1rem 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .chefCard{
+        margin-block: 1rem;
+        width: 100%;
+    }
+    .socialIcons{
+        left: 40rem;
+    }
+    .chefCard:hover .socialIcons{
+        left: 28rem;
+    }
+}
+@media screen and (min-width: 681px) and (max-width:768px) {
+    .chefsCards{
+        width: 100%;
+        padding: 1rem 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .chefCard{
+        margin-block: 1rem;
+        width: 100%;
+    }
+    .socialIcons{
+        left: 40rem;
+    }
+    .chefCard:hover .socialIcons{
+        left: 34rem;
+    }
+}
+@media screen and (min-width: 769px) and (max-width:800px) {
+    .chefsCards{
+        width: 100%;
+        padding: 1rem 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+       
+    }
+    .chefCard{
+        margin-block: 1rem;
+        width: 45%;
+
+    }
+    .socialIcons{
+        left: 29rem;
+    }
+    .chefCard:hover .socialIcons{
+        left: 15rem;
+    }
+}
+@media screen and (min-width: 801px) and (max-width:992px){
+    .chefsCards{
+        width: 100%;
+        padding: 1rem 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+       
+    }
+    .chefCard{
+        margin-block: 1rem;
+        width: 45%;
+
+    }
+    .socialIcons{
+        left: 29rem;
+    }
+    .chefCard:hover .socialIcons{
+        left: 18rem;
+    }
+}
+@media screen and (min-width: 993px) and (max-width:1140px){
+    .chefsCards{
+        width: 100%;
+        padding: 1rem 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+       
+    }
+    .chefCard{
+        margin-block: 1rem;
+    }
+    .socialIcons{
+        left: 29rem;
+    }
+    .chefCard:hover .socialIcons{
+        left: 14.5rem;
+    }
+}
+@media screen and (min-width: 1140px) and (max-width:1400px){
+    .chefsCards{
+        width: 100%;
+        padding: 1rem 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+       
+    }
+    .chefCard{
+        margin-block: 1rem;
+    }
+    .socialIcons{
+        left: 29rem;
+    }
+    .chefCard:hover .socialIcons{
+        left: 18rem;
+    }
+}
+/*******End od chefs section *******/
+/************ Start Gallery Section *************************/
+#gallery{
+    width: 100%;
+    background-color: var(--background-odd-sections-lightmode);
+}
+.galleryLayer {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    background-color: var(--background-odd-sections-lightmode);
+}
+.galleryHeaders{
+    text-align: center;
+    line-height: 2rem;
+    padding: 1rem 1rem 2rem 1rem;
+}
+.galleryHeaders span{
+    color:var(--fontcolor);
+    font-size: 1rem;
+}
+.galleryHeaders h2{
+    padding: 1rem;
+    font-family: var(--font-family);
+    color:var(--fontcolor);
+    font-size: 4rem;
+}
+.galleryHeaders h2 span{
+    font-family: var(--font-family);
+    color:var(--background-color-button);
+    font-size: inherit;
+}
+.galleryPictures{
+   padding-top: 1rem;
+   width: 100%;
+   overflow-x: auto;
+}
+
+.parent {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 17rem 6rem 16rem 6rem 20rem 5rem;
+    grid-template-rows: 19rem 21rem 0.2rem 1rem 6rem 21rem ;
+    grid-row-gap: 1rem;
+    grid-column-gap: 1rem;
+    overflow: hidden;
+}
+    
+    .div1 { grid-area: 1 / 1 / 2 / 3; }
+    .div2 { grid-area: 2 / 1 / 4 / 3; }
+    .div3 { grid-area: 1 / 3 / 4 / 5; }
+    .div4 { grid-area: 5 / 3 / 7 / 5; }
+    .div5 { grid-area: 1 / 5 / 2 / -1; }
+    .div6 { grid-area: 2 / 5 / 4 / -1; }
+    .div7 { grid-area: 3 / 5 / 5 / -1; }
+
+    .divLayer img{
+        width:100%;
+        border: 0.3rem solid var(--background-even-sections-lightmode);
+        transition: transform 500ms ease-in-out;
+        overflow: hidden;
+        z-index: 0;
+    }
+    .divLayer{        
+        width: 100%;
+        position: relative;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        overflow: hidden;
+    }
+
+.GallerybackgroundLayer{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0.1rem;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    line-height: 2rem;
+    text-align: center;
+    font-family: var(--font-default);
+    color: var(--fontcolor-darkmode);
+    background-color: rgba(0,0, 0,0.7);
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(105%);
+    z-index: 1;
+ 
+    transition: transform 500ms ease-in-out;
+    --fontfamily-meals:'Inter' sans-serif;
+}
+.GallerybackgroundLayer h3{
+    font-size: 1.5rem;
+    font-family: var(--fontfamily-meals);
+    font-weight: 700;
+}
+.GallerybackgroundLayer p{
+    font-family: var(--fontfamily-meals);
+    width:80%;
+    font-size: 1rem;
+    position: relative;
+    left:10%;
+}
+.divLayer:hover .GallerybackgroundLayer{
+    opacity: 1;
+    transform: translateY(0);
+    transform-origin: left;
+}
+.divLayer:hover img{
+    transform: scale(1.1,1.1);
+}
+
+@media screen and (max-width: 427px) {
+:root{
+    font-size: 13px;
+}
+    .parent {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        /*  21rem 6rem 22rem 5rem 20rem 5rem; */
+        grid-template-rows:  15rem 3rem 22rem 8rem 25rem 5rem 10rem 3rem 22rem 6rem 13rem  6rem 13rem ; 
+        /*/  19rem 21rem 0.5rem 4rem 10rem 21rem  /*/
+        grid-row-gap: 2rem;
+        grid-column-gap: 1rem;
+        overflow: hidden;
+    }
+        
+        .div1 { 
+            /* grid-area: 1 / 1 / -1 / -1; */
+            grid-column: 1/-1;
+            grid-row: 1/2;
+         }
+        .div2 { 
+            /* grid-area: 1 / 3 / -1 / 3;  */
+            grid-column: 1/-1;
+            grid-row: 2/3;
+            margin-top: 1rem;
+        }
+        .div3 { 
+            /* grid-area: 1 / 3 / -1 / 4;  */
+            grid-column: 1/-1;
+            grid-row: 5/7;
+        }
+        .div4 { 
+            grid-column: 1/-1;
+            grid-row: 8/9;
+         }
+        .div5 { 
+            grid-column: 1/-1;
+            grid-row: 10/11;
+        }
+        .div6 { 
+            grid-column: 1/-1;
+            grid-row: 12/13;
+        }
+        .div7 { 
+            grid-column: 1/-1;
+            grid-row: 14/15;
+         }
+    
+}
+@media screen and (min-width: 427px) and (max-width:710px) {
+    .parent {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;        
+        grid-template-rows:  23rem 6rem 20rem 24rem 25rem 20rem 10rem 3rem 31rem 6rem 19rem  6rem 20rem ;         
+        grid-row-gap: 2rem;
+        grid-column-gap: 1rem;
+        overflow: hidden;
+    }
+        
+        .div1 {           
+            grid-column: 1/-1;
+            grid-row: 1/2;
+         }
+        .div2 { 
+            grid-column: 1/-1;
+            grid-row: 2/3;
+            margin-top: 1rem;
+        }
+        .div3 { 
+            grid-column: 1/-1;
+            grid-row: 5/7;
+        }
+        .div4 { 
+            grid-column: 1/-1;
+            grid-row: 8/9;
+         }
+        .div5 { 
+            grid-column: 1/-1;
+            grid-row: 10/11;
+        }
+        .div6 { 
+            grid-column: 1/-1;
+            grid-row: 12/13;
+        }
+        .div7 { 
+            grid-column: 1/-1;
+            grid-row: 14/15;
+         }
+    
+}
+@media screen and (min-width: 710.1px) and (max-width:992px) {
+    .parent {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;        
+        grid-template-rows:  30rem 6rem 28rem 29rem 35rem 23rem 13rem 10rem 34rem 12rem 19rem 9rem 20rem ;         
+        grid-row-gap: 2rem;
+        grid-column-gap: 1rem;
+        overflow: hidden;
+    }
+        
+        .div1 {           
+            grid-column: 1/-1;
+            grid-row: 1/2;
+         }
+        .div2 { 
+            grid-column: 1/-1;
+            grid-row: 2/3;
+            margin-top: 1rem;
+        }
+        .div3 { 
+            grid-column: 1/-1;
+            grid-row: 5/7;
+        }
+        .div4 { 
+            grid-column: 1/-1;
+            grid-row: 8/9;
+         }
+        .div5 { 
+            grid-column: 1/-1;
+            grid-row: 10/11;
+        }
+        .div6 { 
+            grid-column: 1/-1;
+            grid-row: 12/13;
+        }
+        .div7 { 
+            grid-column: 1/-1;
+            grid-row: 14/15;
+         }
+}
+
+/************* End of Gallery Section ***********************/
+/*********Start contact section*********/
+#contact{
+    padding: 2rem 0;
+}
+.contactLayer{
+    width:90%;
+    margin: auto;
+    text-align: center;
+}
+.map{
+    width: 100%;
+}
+.contactLayer .map iframe{
+    width:97%;
+    margin: auto;
+    text-align: center;
+}
+.contactHeaders{
+    text-align: center;
+    line-height: 2rem;
+    padding: 1rem 1rem 2rem 1rem;
+}
+.contactHeaders span{
+    color:var(--fontcolor);
+    font-size: 1rem;
+}
+.contactHeaders h2{
+    padding: 1rem;
+    font-family: var(--font-family);
+    color:var(--fontcolor);
+    font-size: 4rem;
+}
+.contactHeaders h2 span{
+    font-family: var(--font-family);
+    color:var(--background-color-button);
+    font-size: inherit;
+}
+.contactContent{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+.contactdetailsLayer{
+    padding-top: 2rem;
+    width: 100%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(4,auto);
+}
+.small-datails{
+    background-color: var(--background-color-card);
+    width:95%;
+    margin:1rem 1rem;
+    padding: 2rem 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    border: none;
+}
+.contactIcon{
+    background-color: var(--background-color-button);
+    border-radius: 50%;
+    width:10%;
+    text-align: center;
+    position: relative;
+}
+.contactIcon i{
+    position: absolute;
+    top: 0.9rem;
+    bottom: 0;
+    left:0;
+    right: 0;
+    font-size: 1.5rem;
+    color: var(--fontcolor-darkmode);
+}
+
+.datail-data{
+    width:90%;
+    padding:0 1rem;
+    text-align: left;
+    font-family: var(--font-default);
+    font-size: 1rem;
+    color: var(--contactDetails-color);
+}
+.datail-data h3{
+    color: var(--fontcolor-data);
+    font-size: 1.5rem;  
+}
+.contactForm{
+    width: 98%;
+    margin: auto;
+}
+.formLayer{
+    width: 100%;
+    margin: auto;
+    box-shadow: 0.01rem 0.2rem 0.5rem 0.3rem rgb(211, 211, 211);
+    border-radius: 0.2rem;
+}
+.formLayer .row{
+    width:100%;
+    text-align: center;
+    padding: 1rem;
+}
+.formLayer .row input, .formLayer .row textarea{
+    margin: 1rem 0;
+    padding: 1rem;
+    border:1px solid #c6c6c6;
+    border-radius: 0.2rem;
+    color: var(--fontcolor-data);
+    transition: border-color 400ms;
+}
+.formLayer .row input:hover,.formLayer .row input:focus
+, .formLayer .row textarea:hover,.formLayer .row textarea:focus{
+    border-color: #CE1212;
+}
+
+.row1 input#fname ,input#email{
+    width:48%;
+}
+.row2 input#subject{
+    width: 96%;
+}
+.row3 textarea#message{
+    width: 95%;
+}
+.row button{
+    background-color: var(--background-color-button);
+    color: var(--font-color-button);
+    font-family: var(--font-default);
+    font-size: 1.1rem;
+    padding: 0.8rem 2rem;
+    border-radius: 1.2rem;
+    border: none;
+}
+@media screen and (max-width: 992px) {
+
+    .contactdetailsLayer{
+        grid-template-columns: repeat(1,1fr);
+        grid-template-rows: repeat(4,auto);
+    }
+    
+    .contactIcon{
+        width:20%;
+        text-align: center;
+        position: relative;
+    }
+    .contactIcon i{
+        position: relative;
+        top: 1rem;
+        bottom: 0;
+        left:0;
+        right: 0;
+        font-size: 1.5rem;
+    }
+    .contactHeaders{
+        line-height: 4rem;
+    }
+
+}
+/********End of contact section ***********/
+/************ Footer *********************/
+footer{
+    background: url(/image/textured-metal-background.jpg);
+    position: relative;
+    padding-top: 1rem;
+    margin-top: 4rem;
+}
+.footerContainer{
+    width:100%;
+    padding: 1rem;
+    position: relative;
+}
+.footerContainer{
+    width:95%;
+    margin: auto;
+    display: flex;
+    align-content: flex-start;
+    justify-content: center;
+    color: var(--fontcolor-darkmode);
+}
+.footAbout{
+    width:25%;
+    position: relative;
+    top: 1rem;
+    bottom: 0;
+    left:0;
+    line-height: 1.6rem;
+    height: fit-content;
+    text-align: center;
+    height: fit-content;
+    font-family: var(--font-default);
+}
+.footLogo{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: row;
+}
+.footAbout > p{    
+    padding-inline:0.6rem ;
+    text-align: left;
+}
+.footLogo .logoImg img{
+    width:80%;
+}
+.footLogo .logoImg{
+    width:20%; 
+    position:relative;
+    left: -2rem;   
+}
+.footLogo h3{
+    position: relative;
+    right: 0;
+    top: 0.9rem;
+    bottom: 0;
+    left: -3rem;
+    width:50%;
+    color: var(--fontcolor-darkmode);
+    font-size: 2rem;
+    font-family: var(--font-default);
+}
+.footLogo h3 span{
+    color: var(--background-color-button--lightmode);
+}
+.socialHeader{
+    text-align: center;
+    border-bottom: 2px solid var(--backgroundColor-even);
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    
+}
+.sociallinks{
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center;
+}
+.sociallinks li{
+    font-size: 1.5rem;
+    padding: 1rem 0;    
+}
+.sociallinks li a{
+    color: var(--fontcolor-darkmode);
+}
+.footSubscribtion{
+    position: relative;
+    top:1rem;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    width:45%;
+    height: fit-content;
+    margin: 0.5rem;
+}
+.sub_content{
+    width: 100%;
+    height: fit-content;
+    padding-inline: 1rem;
+    text-align: left;
+    line-height: 1.5rem;
+}
+.sub_content h3{
+    padding: 0 0 0.3rem 0;
+    font-size: 1.3rem;
+}
+.sub_content p{
+    width: 80%;
+}
+.sub_input{
+    width: 100%;
+    padding: 0.6rem;
+}
+.sub_input input{
+    width:60%;
+    padding: 0.8rem;
+    border-radius: 1.5rem;
+}
+.sub_input button{
+    width: 35%;
+    padding: 0.7rem 2rem;
+    border-radius: 1.5rem;
+    background-color: var(--background-color-button);
+    color: var(--font-color-button);
+    font-size: 1rem;
+}
+.sub_input button i{
+    font-size: 1rem;
+    color: var(--font-color-button);
+}
+.quicklinks{
+    width: 100%;
+    padding: 0.5rem;
+}
+.quicklinks ul{
+    display: flex;
+    justify-content: start;
+    align-content: space-around;
+    flex-wrap: wrap;
+    padding: 0.5rem;
+}
+.quicklinks ul li{
+    width:40%;
+    padding: 0.5rem;
+    transition: all 500ms ease-in-out;
+}
+.quicklinks ul li a{
+    color: var(--font-color-button);
+}
+.quicklinks ul li a::before{
+    content:'\27A5';
+    padding-inline: 0.6rem;
+}
+.quicklinks ul li:hover{
+    transform: translateX(1rem);
+    background-color: var(--color-icon);
+}
+.footDetails{
+    position: relative;
+    top:1rem;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    width:25%;
+    height: fit-content;
+    margin: 0.1rem; 
+    padding-block: 0.2rem;
+    font-family: var(--font-default);
+}
+.footDetails h3{
+    padding:0 0 1rem 1rem;
+    font-size: 1.3rem;
+}
+.footDetails ul{
+    padding: 1rem;
+}
+.footDetails ul li{
+    padding: 0.5rem 0.1rem;
+}
+.footDetails ul li span{
+    padding: 0rem 0.1rem;
+}
+.footDetails ul li i{
+    color: var(--background-color-button);
+    font-size: 1.2rem;
+}
+@media screen and (max-width: 1280px) {
+    .footerContainer{
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+    }
+    .footDetails,.footSubscribtion,.footAbout{
+        width:90%;
+        padding-inline: 2rem;
+    }
+}
+@media screen and (max-width: 588px) {
+    .sub_input{
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+    }
+    .sub_input input{
+        width:100%;
+        padding: 0.8rem;
+        border-radius: 1.5rem;
+    }
+    .sub_input button{
+        width: 100%;
+        margin-block: 1rem;
+        font-size: 1rem;
+    }
+    .sub_input button i{
+        font-size: 1rem;
+    }
+    .footLogo h3{
+        padding-inline: 1rem;
+        top:0;
+    }
+}
+/*********** End of Footer ****************/
